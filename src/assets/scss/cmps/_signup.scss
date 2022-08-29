@@ -1,0 +1,60 @@
+.signup-conteiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .signup-heder {
+    font-weight: 800;
+    margin-top: 100px;
+    color: #0077b6;
+  }
+  .signup-btc-icon {
+    margin: 50px 0 0 0;
+    animation: spin 8s linear infinite;
+    width: 80px;
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .signup-form-input {
+      border-radius: 10px;
+      height: 50px;
+      width: 300px;
+      font-size: 25px;
+      border: 3px solid #0077b6;
+    }
+
+    button {
+      display: inline-block;
+      outline: 0;
+      border: 0;
+      cursor: pointer;
+      will-change: box-shadow, transform;
+      background: radial-gradient(100% 100% at 100% 0%, #89e5ff 0%, #5468ff 100%);
+      box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+      padding: 0 32px;
+      border-radius: 6px;
+      color: #fff;
+      height: 48px;
+      font-size: 18px;
+      text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+      :hover {
+        box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #3c4fe0;
+        transform: translateY(-2px);
+      }
+      :active {
+        box-shadow: inset 0px 3px 7px #3c4fe0;
+        transform: translateY(2px);
+      }
+    }
+  }
+}

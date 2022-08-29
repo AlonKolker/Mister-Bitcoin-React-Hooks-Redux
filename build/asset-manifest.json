@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/alonKolker/Mister-Bitcoin-React-Hooks-Redux.git/static/css/main.1660893b.css",
+    "main.js": "/alonKolker/Mister-Bitcoin-React-Hooks-Redux.git/static/js/main.0fbdf8f9.js",
+    "static/media/btc4.png": "/alonKolker/Mister-Bitcoin-React-Hooks-Redux.git/static/media/btc4.7f9e5e703a51754df4db.png",
+    "static/media/bitcoin-man.ipg": "/alonKolker/Mister-Bitcoin-React-Hooks-Redux.git/static/media/bitcoin-man.c886d376940cf9b21e16.ipg",
+    "index.html": "/alonKolker/Mister-Bitcoin-React-Hooks-Redux.git/index.html",
+    "main.1660893b.css.map": "/alonKolker/Mister-Bitcoin-React-Hooks-Redux.git/static/css/main.1660893b.css.map",
+    "main.0fbdf8f9.js.map": "/alonKolker/Mister-Bitcoin-React-Hooks-Redux.git/static/js/main.0fbdf8f9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1660893b.css",
+    "static/js/main.0fbdf8f9.js"
+  ]
+}
