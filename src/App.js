@@ -1,17 +1,14 @@
-// import { HashRouter as Router, Redirect, Route, Switch } from "react-router-dom"
 import { HashRouter as Router, Navigate, Route, Routes } from "react-router-dom"
-
-import { MainHeader } from "./components/Main-header"
+import { userService } from "../src/services/user.service"
 import "./assets/scss/global.scss"
 
 import { Home } from "./pages/Home"
+import { MainHeader } from "./components/Main-header"
 import { Signup } from "./pages/Signup"
 import { Contact } from "./pages/Contact"
 import { Statistic } from "./pages/Statistic"
 import { ContactDeatails } from "./pages/Contact-details"
 import { ContactEdit } from "./pages/Contact-Edit"
-import { userService } from "../src/services/user.service"
-
 
 function App() {
   const PrivateRoute = ({ children }) => {
@@ -24,7 +21,7 @@ function App() {
         <MainHeader />
         <div className='main-conteiner'>
           <Routes>
-          <Route
+            <Route
               path='/'
               element={
                 <PrivateRoute>
@@ -32,15 +29,8 @@ function App() {
                 </PrivateRoute>
               }
             />
-                    <Route
-              path='/signup'
-              element={
-                <PrivateRoute>
-                  <Signup />
-                </PrivateRoute>
-              }
-            />
-                        <Route
+            <Route path='/signup' element={<Signup />} />
+            <Route
               path='/contact'
               element={
                 <PrivateRoute>
@@ -48,7 +38,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-             <Route
+            <Route
               path='/statistic'
               element={
                 <PrivateRoute>
@@ -59,11 +49,6 @@ function App() {
             <Route path='/contact/edit/:id' element={<ContactEdit />} />
             <Route path='/contact/edit' element={<ContactEdit />} />
             <Route path='/contact/:id' element={<ContactDeatails />} />
-
-           
-    
-            {/* <Route path='/' component={Home} /> */}
-  
           </Routes>
         </div>
       </Router>

@@ -23,12 +23,5 @@ export function MovesList({ contact, moves, title }) {
   )
 }
 
-{
-  /* <section>
-{moves.map(move=>{
-  console.log(contact.name,move.to);
-  if(move.to === contact.name){
-    <h1>{move.to}</h1>
-  }})}
-</section> */
-}
+
+ 

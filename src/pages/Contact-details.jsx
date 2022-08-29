@@ -1,16 +1,14 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState, React } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getUserMoves, addUserMove } from "../store/actions/userActions"
-import { removeContact } from '../store/actions/contactActions'
 import { useNavigate, useParams } from "react-router-dom"
+import { HashRouter as Link, NavLink } from "react-router-dom"
+import { getUserMoves, addUserMove } from "../store/actions/userActions"
+import { removeContact } from "../store/actions/contactActions"
 
-import React from "react"
 import { contactService } from "../services/contactService"
-import { userService } from "../services/user.service"
 import { TransferFund } from "../components/Transfer-fund"
 import { MovesList } from "../components/Moves-list"
-
-import { HashRouter as Link, NavLink, Router, Redirect, Route, Switch } from "react-router-dom"
+// import React from "react"
 
 export const ContactDeatails = () => {
   const [contact, setContact] = useState({})
@@ -32,15 +30,9 @@ export const ContactDeatails = () => {
   }, [loadContact, dispatch])
 
   const onRemoveContact = async (contactId) => {
-    await dispatch(removeContact(contactId))
+    dispatch(removeContact(contactId))
     navigate("/contact")
   }
-
-  // const onRemoveContact = async (contactId) => {
-  //   await contactService.deleteContact(contactId)
-  //   history.push("/contact")
-  //   // navigate('/contact')
-  // }
 
   const onBack = () => {
     navigate("/contact")

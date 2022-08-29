@@ -1,17 +1,16 @@
-// import { Component, createRef } from "react"
-import { contactService } from "../services/contactService"
-import { useForm } from "../customHooks/useForm"
-import { useEffect, useCallback, Component, createRef } from "react"
+import { useEffect, useCallback } from "react"
 import { useDispatch } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 import { saveContact } from "../store/actions/contactActions"
+import { useForm } from "../customHooks/useForm"
+import { contactService } from "../services/contactService"
 
 export const ContactEdit = () => {
   const [contact, handleChange, setContact] = useForm()
   const params = useParams()
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  
+
   const loadContact = useCallback(async () => {
     const contactId = params.id
     const contact = contactId ? await contactService.getContactById(contactId) : contactService.getEmptyContact()
