@@ -3,15 +3,15 @@ import { contactService } from "../services/contactService"
 import { useForm } from "../customHooks/useForm"
 import { useEffect, useCallback, Component, createRef } from "react"
 import { useDispatch } from "react-redux"
-import { useHistory, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { saveContact } from "../store/actions/contactActions"
 
 export const ContactEdit = () => {
   const [contact, handleChange, setContact] = useForm()
-  const dispatch = useDispatch()
-  const history = useHistory()
   const params = useParams()
-
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  
   const loadContact = useCallback(async () => {
     const contactId = params.id
     const contact = contactId ? await contactService.getContactById(contactId) : contactService.getEmptyContact()
@@ -27,11 +27,11 @@ export const ContactEdit = () => {
     const { name, phone, email } = ev.target.elements
     if (name.value === "" || phone.value === "" || email.value === "") return
     dispatch(saveContact(contact))
-    history.push("/contact")
+    navigate("/contact")
   }
 
   const onBack = () => {
-    history.push("/contact")
+    navigate("/contact")
   }
 
   if (!contact) return <div>Loading contact edit...</div>

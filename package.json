@@ -1,5 +1,5 @@
 {
-  "homepage":"https://alonkolker.github.io/Mister-Bitcoin-React-Hooks-Redux/",
+  "homepage": "https://alonkolker.github.io/Mister-Bitcoin-React-Hooks-Redux/",
   "name": "mister-bitcoin",
   "version": "0.1.0",
   "private": true,
@@ -12,7 +12,7 @@
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
-    "react-router-dom": "^5.3.3",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-sparklines": "^1.7.0",
     "redux": "^4.2.0",
@@ -50,4 +50,3 @@
     "gh-pages": "^4.0.0"
   }
 }
-

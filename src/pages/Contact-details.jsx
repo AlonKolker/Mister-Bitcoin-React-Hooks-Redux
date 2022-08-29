@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getUserMoves, addUserMove } from "../store/actions/userActions"
 import { removeContact } from '../store/actions/contactActions'
-import { useHistory, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 import React from "react"
 import { contactService } from "../services/contactService"
@@ -15,7 +15,7 @@ import { HashRouter as Link, NavLink, Router, Redirect, Route, Switch } from "re
 export const ContactDeatails = () => {
   const [contact, setContact] = useState({})
   const params = useParams()
-  const history = useHistory()
+  const navigate = useNavigate()
   const userMoves = useSelector((state) => state.userModule.userMoves)
   const dispatch = useDispatch()
 
@@ -33,7 +33,7 @@ export const ContactDeatails = () => {
 
   const onRemoveContact = async (contactId) => {
     await dispatch(removeContact(contactId))
-    history.push("/contact")
+    navigate("/contact")
   }
 
   // const onRemoveContact = async (contactId) => {
@@ -43,7 +43,7 @@ export const ContactDeatails = () => {
   // }
 
   const onBack = () => {
-    history.push("/contact")
+    navigate("/contact")
   }
 
   const onTransfer = (val, contact) => {

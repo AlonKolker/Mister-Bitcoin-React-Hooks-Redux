@@ -7,14 +7,14 @@ import { HashRouter as Link, NavLink, Router, Redirect, Route, Switch } from "re
 
 
 import { useDispatch } from 'react-redux'
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 
 export const Signup = ()=> {
 
   const dispatch = useDispatch()
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const onSignUp =  (ev) => {
     ev.preventDefault()
@@ -22,7 +22,7 @@ export const Signup = ()=> {
     // if (value === '') return
      dispatch(signup(value))
     console.log('onSignUp',value)
-    history.push("/")
+    navigate("/")
 
   }
 

@@ -1,5 +1,5 @@
 import React from "react"
-import { HashRouter as  Link,BrowserRouter,Switch,Router } from "react-router-dom"
+import { HashRouter as  Link,BrowserRouter,Switch,Router,Routes,NavLink } from "react-router-dom"
 // import { contactService } from "../services/contactService"
 import { ContactList } from "../components/Contact-list"
 // import { ContactDeatails } from "../pages/Contact-details"
@@ -30,12 +30,12 @@ export const Contact = () => {
   return (
     <div className='contacts-conteiner'>
       <div className='contact-options-box  flex'>
-      <Link className='add-new-contact-btn' to='/contact/edit'>
+      <NavLink className='add-new-contact-btn' activeClassName="selected" to='/contact/edit'>
             New Contact
-          </Link>
-          <button className='add-new-contact-btn' to='/contact/edit'>
+          </NavLink>
+          {/* <button className='add-new-contact-btn' to='/contact/edit'>
             New Contact
-          </button>
+          </button> */}
         <ContactFilter onChangeFilter={onChangeFilter} />
       </div>
       <ContactList contacts={contacts} />

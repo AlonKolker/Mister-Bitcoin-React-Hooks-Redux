@@ -4,7 +4,7 @@
 import { MovesList } from "../components/Moves-list"
 import avatar from "../assets/imgs/bitcoin-man.ipg"
 // import avatar from "../assets/imgs/avatar4.jpg"
-import { useHistory, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 
 
@@ -21,7 +21,7 @@ export const Home =()=> {
   const userMoves = useSelector((state) => state.userModule.userMoves)
   const userRate = useSelector((state) => state.userModule.userRate)
   const dispatch = useDispatch()
-  const history = useHistory()
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(loadUser())

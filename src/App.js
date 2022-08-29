@@ -1,7 +1,8 @@
-import { HashRouter as Router, Redirect, Route, Switch } from "react-router-dom"
+// import { HashRouter as Router, Redirect, Route, Switch } from "react-router-dom"
+import { HashRouter as Router, Navigate, Route, Routes } from "react-router-dom"
+
 import { MainHeader } from "./components/Main-header"
 import "./assets/scss/global.scss"
-
 
 import { Home } from "./pages/Home"
 import { Signup } from "./pages/Signup"
@@ -12,28 +13,58 @@ import { ContactEdit } from "./pages/Contact-Edit"
 import { userService } from "../src/services/user.service"
 
 
-
-const PrivateRoute = (props) => {
-  const user = userService.getUser()
-    return user ? <Route  {...props}/> : <Redirect to='/signup' />
-}
-
 function App() {
+  const PrivateRoute = ({ children }) => {
+    const user = userService.getUser()
+    return user ? children : <Navigate to='/signup' />
+  }
   return (
     <main>
-         <Router>
-          <MainHeader />
+      <Router>
+        <MainHeader />
         <div className='main-conteiner'>
+          <Routes>
+          <Route
+              path='/'
+              element={
+                <PrivateRoute>
+                  <Home />
+                </PrivateRoute>
+              }
+            />
+                    <Route
+              path='/signup'
+              element={
+                <PrivateRoute>
+                  <Signup />
+                </PrivateRoute>
+              }
+            />
+                        <Route
+              path='/contact'
+              element={
+                <PrivateRoute>
+                  <Contact />
+                </PrivateRoute>
+              }
+            />
+             <Route
+              path='/statistic'
+              element={
+                <PrivateRoute>
+                  <Statistic />
+                </PrivateRoute>
+              }
+            />
+            <Route path='/contact/edit/:id' element={<ContactEdit />} />
+            <Route path='/contact/edit' element={<ContactEdit />} />
+            <Route path='/contact/:id' element={<ContactDeatails />} />
 
-          <Switch>
-            <Route path='/contact/edit/:id?' component={ContactEdit} />
-            <Route path='/contact/:id' component={ContactDeatails} />
-            <PrivateRoute path='/contact' component={Contact} />
-            <PrivateRoute path='/statistic' component={Statistic} />
-            <Route  path='/signup' component={Signup} />
+           
+    
             {/* <Route path='/' component={Home} /> */}
-            <PrivateRoute path='/' component={Home} />
-          </Switch>
+  
+          </Routes>
         </div>
       </Router>
     </main>

@@ -3,15 +3,13 @@ import { MarketPrice } from "../components/Market-price"
 import { ConfirmedTransactions } from "../components/Confirmed-transactions"
 
 
-export class Statistic extends Component {
+export const Statistic = ()=> {
 
-
-  render() {
     return (
       <div>
         <MarketPrice />
         <ConfirmedTransactions/>
       </div>
     )
-  }
+
 }

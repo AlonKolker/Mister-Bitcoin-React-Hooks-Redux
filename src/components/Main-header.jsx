@@ -3,8 +3,7 @@ import btc4 from "../assets/imgs/btc4.png"
 
 import { Component } from "react"
 
-export class MainHeader extends Component {
-  render() {
+export function MainHeader() {
     return (
       // <Router>
         <div className='app-header  flex space-between'>
@@ -13,7 +12,7 @@ export class MainHeader extends Component {
           <img className="signup-btc-icon" src={btc4} alt="" />
           </div>
           <nav>
-            <NavLink exact to='/'>
+            <NavLink exact="true" to='/'>
               Home
             </NavLink>
             <NavLink to='/contact'>Contact</NavLink>
@@ -22,5 +21,5 @@ export class MainHeader extends Component {
         </div>
       // </Router>
     )
-  }
+  
 }
