@@ -1,11 +1,9 @@
-
 export const contactService = {
   getContacts,
   getContactById,
   deleteContact,
   saveContact,
   getEmptyContact,
-  
 }
 
 const contacts = [
@@ -124,6 +122,36 @@ const contacts = [
     email: "lillyconner@renovize.com",
     phone: "+1 (842) 587-3812",
   },
+  {
+    _id: "5a5c3abdad6f5e098c",
+    name: "Yuval Shnokler",
+    email: "YuvalShnokler@renovize.com",
+    phone: "+1 (842) 587-3812",
+  },
+  {
+    _id: "5a5c4548926396+523abdad6f5e098c",
+    name: "Guy Kol",
+    email: "GuyKol@renovize.com",
+    phone: "+1 (842) 587-3812",
+  },
+  {
+    _id: "5a536592695d5f098c",
+    name: "Denis Lit",
+    email: "DenisLit@renovize.com",
+    phone: "+1 (842) 587-3812",
+  },
+  {
+    _id: "5a536254d87f894vf592695d5f098c",
+    name: "Alen Pol",
+    email: "AlenPol@renovize.com",
+    phone: "+1 (842) 587-3812",
+  },
+  {
+    _id: "5a53dasd695626dff098c",
+    name: "Tamir Fishel",
+    email: "TamirFishel@renovize.com",
+    phone: "+1 (842) 587-3812",
+  },
 ]
 
 function sort(arr) {
@@ -199,8 +227,6 @@ function getEmptyContact() {
     phone: "",
   }
 }
-
-
 
 function filter(term) {
   term = term.toLocaleLowerCase()

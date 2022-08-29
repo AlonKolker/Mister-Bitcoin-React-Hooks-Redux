@@ -7,15 +7,9 @@ export const userService = {
 
 const USERS = "usersDB"
 const USER_KEY = "loggedin"
-// const gUsers = storageService.load(USERS) || {}
 
 function getUser() {
-  // return {
-  //     name:"Banjemin Brice",
-  //     coins: 100,
-  //     moves:[],
-  // }
-  //   const user = JSON.parse(sessionStorage.getItem(STORAGE_KEY))
+
   const user = storageService.load(USER_KEY) || null
   return user
 }
